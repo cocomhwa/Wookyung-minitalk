@@ -6,13 +6,18 @@
 /*   By: wooshin <wooshin@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 14:46:29 by wooshin           #+#    #+#             */
-/*   Updated: 2023/01/11 15:13:35 by wooshin          ###   ########.fr       */
+/*   Updated: 2023/01/11 19:51:14 by wooshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-int	main(void)
+int	main(int ac, char **av)
 {
 	ft_printf("HELLO CLIENT\n");
+	if (ac == 3)
+	{
+		ft_printf("str : %s\n", av[2]);
+	}
+	return (0);
 }
