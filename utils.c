@@ -1,48 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wooshin <wooshin@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/11 14:46:29 by wooshin           #+#    #+#             */
-/*   Updated: 2023/01/12 20:45:44 by wooshin          ###   ########.fr       */
+/*   Created: 2023/01/12 20:40:26 by wooshin           #+#    #+#             */
+/*   Updated: 2023/01/12 20:41:43 by wooshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-void	send_binary_signal(int pid, int bit, unsigned char c)
+static int	checkspace(char c)
 {
-	while (bit > 0)
-	{
-	ft_printf("%d\n", (int)c);
-		if (c % 2)
-			kill(pid, SIGUSR2);
-		else if (c % 2 == 0)
-			kill(pid, SIGUSR1);
-		usleep(100);
-		c /= 2;
-		bit--;
-	}
+	return ((c >= 9 && c <= 13) || c == 32);
 }
 
-int	main(int ac, char **av)
-{	
+int	ft_atoi(const char *str)
+{
 	int	i;
-	int	pid;
+	int	sign;
+	int	result;
 
 	i = 0;
-	pid = ft_atoi(av[1]);
-	if (ac == 3)
+	sign = 0;
+	result = 0;
+	while (checkspace(str[i]) && str[i] != 0)
+		i++;
+	if ((str[i] == 43 || str[i] == 45) && str[i] != 0)
 	{
-
-	}
-	while (av[2][i])
-	{
-		send_binary_signal(pid, 8, av[2][i]);
-		usleep(100);
+		if (str[i] == 45)
+			sign = !sign;
 		i++;
 	}
-	//send_binary_signal(pid, 8, '\n');
+	while (str[i] != 0 && (str[i] >= 48 && str[i] <= 57))
+	{
+		result *= 10;
+		result += str[i] - 48;
+		i++;
+	}
+	if (sign)
+		return (-result);
+	return (result);
 }
