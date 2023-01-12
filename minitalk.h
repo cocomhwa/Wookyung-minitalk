@@ -6,4 +6,9 @@
 #include <signal.h>
 #include <stdlib.h>
 
+typedef struct s_ascii{
+	int	i;
+	int	byte[8];
+}				t_ascii;
+
 #endif
