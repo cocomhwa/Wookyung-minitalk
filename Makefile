@@ -6,7 +6,7 @@
 #    By: wooshin <wooshin@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/11 14:04:37 by wooshin           #+#    #+#              #
-#    Updated: 2023/01/12 21:30:11 by wooshin          ###   ########.fr        #
+#    Updated: 2023/01/14 00:21:14 by wooshin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,7 @@ CFLAGS		= -Wall -Wextra -Werror
 RM			= rm -f
 SRCS_C		= client.c \
 			  utils.c
-SRCS_S		= server.c \
-			  utils.c \
-			  utils2.c
+SRCS_S		= server.c
 PRINTF_PATH	= ./library/ft_printf
 
 OBJS_C 		= $(SRCS_C:.c=.o)
