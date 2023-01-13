@@ -6,7 +6,7 @@
 /*   By: wooshin <wooshin@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 14:46:29 by wooshin           #+#    #+#             */
-/*   Updated: 2023/01/13 23:44:18 by wooshin          ###   ########.fr       */
+/*   Updated: 2023/01/14 00:05:50 by wooshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,5 @@ int	main(int ac, char **av)
 		pid = ft_atoi(av[1]);
 		send_message(pid, av[2]);
 	}
+	return (0);
 }
